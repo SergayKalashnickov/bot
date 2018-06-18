@@ -8,7 +8,7 @@ def startCommand(bot, update):
     bot.send_message(chat_id=update.message.chat_id, text='Привет, давай пообщаемся?')
 def textMessage(bot, update):
     request = apiai.ApiAI('61e9caa7e42d4f5d922018173bf3fb05').text_request() # Токен API к Dialogflow
-    request.lang = 'ru' # На каком языке будет послан запрос
+    request.lang = 'ru' # На каком языке будет послан запросSS
     request.session_id = 'BatlabAIBot' # ID Сессии диалога (нужно, чтобы потом учить бота)
     request.query = update.message.text # Посылаем запрос к ИИ с сообщением от юзера
     responseJson = json.loads(request.getresponse().read().decode('utf-8'))
